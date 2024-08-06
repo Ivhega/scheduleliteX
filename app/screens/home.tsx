@@ -91,6 +91,12 @@ const Home = () => {
         .then(response => {
           Alert.alert('Success', 'Your booking has been made.');
           setBookings([...bookings, response.data]);
+
+          setSelectedDate('');
+          setSelectedCategory('');
+          setSelectedInstructor('');
+          setSelectedTime('');
+          setMarkedDates({});
         })
         .catch(error => {
           console.error('Error making booking:', error);
@@ -122,6 +128,7 @@ const Home = () => {
 
         <RNPickerSelect
           onValueChange={(value) => setSelectedCategory(value)}
+          value={selectedCategory}
           items={[
             { label: 'Academic Tutoring', value: 'Academic Tutoring' },
             { label: 'Language Learning', value: 'Language Learning' },
@@ -135,6 +142,7 @@ const Home = () => {
 
         <RNPickerSelect
           onValueChange={(value) => setSelectedInstructor(value)}
+          value={selectedInstructor}
           items={filteredInstructors.map(instructor => ({
             label: instructor.name,
             value: instructor.id,
@@ -180,6 +188,7 @@ const Home = () => {
         <Text style={styles.normalText}>Select a Time:</Text>
         <RNPickerSelect
           onValueChange={(value) => setSelectedTime(value)}
+          value={selectedTime}
           items={availableTimes.map(time => ({ label: time, value: time }))}
           style={pickerSelectStyles}
           placeholder={{ label: 'Select a time...', value: '' }}
