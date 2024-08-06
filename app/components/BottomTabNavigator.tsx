@@ -6,6 +6,8 @@ import { useAuth } from '@/app/contexts/AuthContext';
 import Home from '@/app/screens/home';
 import Instructors from '@/app/screens/instructors';
 import Booking from '@/app/screens/booking';
+import Logout from '@/app/screens/logout';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,6 +31,9 @@ const BottomTabNavigator = () => {
             case 'Booking':
               iconName = 'book';
               return <Ionicons name="book" size={24} color="black" />;
+            case 'Logout':
+              iconName = 'logout';
+              return <MaterialCommunityIcons name="logout" size={24} color="black" />;
             default:
               return null;
           }
@@ -44,6 +49,7 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Instructors" component={Instructors} />
       <Tab.Screen name="Booking" component={Booking} />
+      <Tab.Screen name="Logout" component={Logout} />
     </Tab.Navigator>
   );
 };
