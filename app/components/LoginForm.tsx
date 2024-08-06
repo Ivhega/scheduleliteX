@@ -36,7 +36,7 @@ const LoginForm = () => {
         setUserName(user.name);
         setUserEmail(user.email);
         Alert.alert('Login successful', `Welcome, ${user.name}!`);
-        navigation.navigate('Auth');
+        navigation.navigate('Home');
       } else {
         Alert.alert('Error', 'Invalid credentials.');
       }
