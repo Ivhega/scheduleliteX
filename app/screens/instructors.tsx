@@ -28,9 +28,10 @@ export default function Instructors() {
         date: selectedDate,
         times: [formattedStartHour],
       };
-  
+      //Ivan's: 192.168.1.96
+      //Adam's: 192.168.1.77
       try {
-        const existingInstructorResponse = await fetch(`http://192.168.1.96:3000/instructors?id=${user?.id}`);
+        const existingInstructorResponse = await fetch(`http://192.168.1.77:3000/instructors?id=${user?.id}`);
         const existingInstructors = await existingInstructorResponse.json();
   
         if (existingInstructors.length > 0) {
@@ -45,8 +46,10 @@ export default function Instructors() {
           } else {
             existingInstructor.availability.push(newAvailability);
           }
-  
-          const updateResponse = await fetch(`http://192.168.1.96:3000/instructors/${existingInstructor.id}`, {
+          
+          //Ivan's: 192.168.1.96
+          //Adam's: 192.168.1.77
+          const updateResponse = await fetch(`http://192.168.1.77:3000/instructors/${existingInstructor.id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -60,7 +63,10 @@ export default function Instructors() {
             alert('Failed to update');
           }
         } else {
-          const response = await fetch('http://192.168.1.96:3000/instructors', {
+
+          //Ivan's: 192.168.1.96
+          //Adam's: 192.168.1.77
+          const response = await fetch('http://192.168.1.77:3000/instructors', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -110,25 +116,26 @@ export default function Instructors() {
           </TouchableOpacity>
           {isCalendarVisible && (
             <View style={styles.calendarWrapper}>
-              <Calendar
-                current={new Date()}
-                onDayPress={(day: DateData) => { 
-                  setSelectedDate(day.dateString);
-                  setCalendarVisible(false); 
-                }}
-                markedDates={{ [selectedDate]: { selected: true, selectedColor: '#EFB509' } }}
-                style={styles.calendar}
-                theme={{
-                  selectedDayBackgroundColor: '#EFB509',
-                  selectedDayTextColor: '#16253D',
-                  arrowColor: '#EFB509',
-                  monthTextColor: '#EFB509',
-                  textSectionTitleColor: '#EFB509',
-                  dayTextColor: '#EFB509',
-                  todayTextColor: '#EFB509',
-                  dotColor: '#EFB509',
-                }}
-              />
+              
+            <Calendar
+              current={moment().format('YYYY-MM-DD')}  // Convert the current date to the required string format
+              onDayPress={(day: DateData) => {
+              setSelectedDate(day.dateString);
+              setCalendarVisible(false);
+              }}
+              markedDates={{ [selectedDate]: { selected: true, selectedColor: '#EFB509' } }}
+              style={styles.calendar}
+              theme={{
+              selectedDayBackgroundColor: '#EFB509',
+              selectedDayTextColor: '#16253D',
+              arrowColor: '#EFB509',
+              monthTextColor: '#EFB509',
+              textSectionTitleColor: '#EFB509',
+              dayTextColor: '#EFB509',
+              todayTextColor: '#EFB509',
+              dotColor: '#EFB509',
+              }}
+            />
             </View>
           )}
         </View>
@@ -283,3 +290,26 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+
+
+
+/*
+<Calendar
+                current={new Date()}
+                onDayPress={(day: DateData) => { 
+                  setSelectedDate(day.dateString);
+                  setCalendarVisible(false); 
+                }}
+                markedDates={{ [selectedDate]: { selected: true, selectedColor: '#EFB509' } }}
+                style={styles.calendar}
+                theme={{
+                  selectedDayBackgroundColor: '#EFB509',
+                  selectedDayTextColor: '#16253D',
+                  arrowColor: '#EFB509',
+                  monthTextColor: '#EFB509',
+                  textSectionTitleColor: '#EFB509',
+                  dayTextColor: '#EFB509',
+                  todayTextColor: '#EFB509',
+                  dotColor: '#EFB509',
+                }}
+              /> */

@@ -23,9 +23,10 @@ const LoginForm = () => {
       Alert.alert('Error', 'Please fill in all fields.');
       return;
     }
-    
+    //Ivan's: 192.168.1.96
+    //Adam's: 192.168.1.77
     try {
-      const response = await axios.get<User[]>('http://192.168.1.96:3000/users', {
+      const response = await axios.get<User[]>('http://192.168.1.77:3000/users', {
         params: { email, password }
       });
 
