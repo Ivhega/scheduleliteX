@@ -116,7 +116,7 @@ const Home = () => {
           <Text style={styles.heading1}>Welcome to SchedulElite!</Text>
         </View>
 
-        <Text style={styles.normalText}>We're excited to help assist you with your studies!</Text>
+        <Text style={styles.normalText2}>We're excited to help assist you with your studies!</Text>
 
         <Text style={styles.normalText}>Please let us know what kind of service you're looking for:</Text>
 
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
   },
   calendar: {
     marginTop: 30,
-    marginBottom: 40,
+    marginBottom: 20,
   },
   selectedValue: {
     marginTop: 10,
@@ -223,6 +223,12 @@ const styles = StyleSheet.create({
     color: '#EFB509',
   },
   normalText: {
+    fontSize: 20,
+    color: '#EFB509',
+    marginTop: 10,
+    textAlign: 'center',
+  },
+  normalText2: {
     fontSize: 20,
     color: '#EFB509',
     marginTop: 20,
@@ -253,7 +259,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: '#EFB509',
     justifyContent: 'center',
-    marginBottom: 20,
+    marginTop: 10,
+    marginBottom: 40,
   },
   pressText: {
     fontSize: 20,

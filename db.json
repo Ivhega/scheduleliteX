@@ -5,6 +5,12 @@
         "email": "Hillary.Fay40@hotmail.com",
         "password": "Incredible",
         "name": "Kattie"
+      },
+      {
+        "id": 2,
+        "email": "adam.devlaming@edu.sait.ca",
+        "password": "password",
+        "name": "Adam de Vlaming"
       }
     ],
 
@@ -14,7 +20,7 @@
       "category": "Academic Tutoring",
       "availability": [
         {
-          "date": "2024-08-05",
+          "date": "2024-08-07",
           "times": [
             "10:00 AM",
             "11:00 AM",

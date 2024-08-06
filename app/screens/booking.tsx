@@ -37,7 +37,7 @@ const BookingList = () => {
               <View key={index} style={styles.bookingContainer}>
                 <Text style={styles.bookingText}>Date: {booking.date}</Text>
                 <Text style={styles.bookingText}>Instructor Name: {booking.instructorName}</Text>
-                <Text style={styles.bookingText}>Instructor: {booking.instructorId}</Text>
+                <Text style={styles.bookingText}>Instructor ID: {booking.instructorId}</Text>
                 <Text style={styles.bookingText}>Time: {booking.time}</Text>
                 <Text style={styles.bookingText}>Category: {booking.category}</Text>
               </View>
@@ -70,10 +70,11 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   heading: {
-    fontSize: 24,
+    fontSize: 35,
     fontWeight: 'bold',
     color: '#EFB509',
     marginVertical: 20,
+    marginTop: 60,
   },
   bookingContainer: {
     backgroundColor: '#EFB509',
