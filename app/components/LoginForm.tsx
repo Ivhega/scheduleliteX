@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Alert, StyleSheet, Text, Pressable, Modal, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/app/contexts/AuthContext';
 
 interface User {
   email: string;

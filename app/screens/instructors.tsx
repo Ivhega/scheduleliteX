@@ -4,7 +4,7 @@ import { Calendar, DateData } from 'react-native-calendars'; // Import DateData 
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import { Picker } from '@react-native-picker/picker';
 import moment from 'moment';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/app/contexts/AuthContext';
 
 type ClassType = 'Academic Tutoring' | 'Language Learning' | 'Skill Development';
 

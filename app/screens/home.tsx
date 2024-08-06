@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar } from 'react-native-calendars';
 import RNPickerSelect from 'react-native-picker-select';
 import axios from 'axios';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/app/contexts/AuthContext';
 
 type Booking = {
   id: string;

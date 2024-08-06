@@ -1,19 +1,34 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Home from './screens/home';
-import Instructors from './screens/instructors';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginForm from './components/LoginForm';
+import BottomTabNavigator from './components/BottomTabNavigator';
+import { AuthProvider, useAuth } from './contexts/AuthContext';
 
+const Stack = createNativeStackNavigator();
 
-const Stack = createStackNavigator();
+const AppContent = () => {
+  const { user } = useAuth(); 
 
-export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Details" component={Instructors} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator>
+      {user ? (
+        <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }} />
+      ) : (
+        <Stack.Screen name="Login" component={LoginForm} options={{ headerShown: false }} />
+      )}
+    </Stack.Navigator>
   );
-}
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <NavigationContainer>
+        <AppContent />
+      </NavigationContainer>
+    </AuthProvider>
+  );
+};
+
+export default App;
