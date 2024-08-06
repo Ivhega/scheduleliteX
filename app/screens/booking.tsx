@@ -1,23 +1,30 @@
 import { ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '@/app/contexts/AuthContext';
+import { useFocusEffect } from '@react-navigation/native';
 
 const BookingList = () => {
   const [bookings, setBookings] = useState([]);
   const { user } = useAuth();
 
-  useEffect(() => {
-    // Fetch bookings from MockAPI
-    axios.get('https://668e9654bf9912d4c92eede2.mockapi.io/tasks/bookings')
-      .then(response => {
-        const userBookings = response.data.filter(booking => booking.studentName.toLowerCase() === user?.name.toLowerCase());
-        setBookings(userBookings);
-      })
-      .catch(error => {
-        console.error('Error fetching bookings:', error);
-      });
-  }, [user]);
+  useFocusEffect(
+    React.useCallback(() => {
+      // Fetch bookings from MockAPI
+      axios.get('https://668e9654bf9912d4c92eede2.mockapi.io/tasks/bookings')
+        .then(response => {
+          const userBookings = response.data.filter(booking => booking.studentName.toLowerCase() === user?.name.toLowerCase());
+          setBookings(userBookings);
+        })
+        .catch(error => {
+          console.error('Error fetching bookings:', error);
+        });
+
+      return () => {
+        // Clean up if needed
+      };
+    }, [user])
+  );
 
   return (
     <View style={styles.container}>
