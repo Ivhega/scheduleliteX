@@ -5,6 +5,7 @@ import { Ionicons, FontAwesome } from 'react-native-vector-icons';
 import { useAuth } from '@/app/contexts/AuthContext';
 import Home from '@/app/screens/home';
 import Instructors from '@/app/screens/instructors';
+import Booking from '@/app/screens/booking';
 
 
 const Tab = createBottomTabNavigator();
@@ -25,6 +26,9 @@ const BottomTabNavigator = () => {
             case 'Instructors':
               iconName = 'book';
               return <FontAwesome name={iconName} size={size} color={color} />;
+            case 'Booking':
+              iconName = 'book';
+              return <Ionicons name="book" size={24} color="black" />;
             default:
               return null;
           }
@@ -39,6 +43,7 @@ const BottomTabNavigator = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Instructors" component={Instructors} />
+      <Tab.Screen name="Booking" component={Booking} />
     </Tab.Navigator>
   );
 };

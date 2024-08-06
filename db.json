@@ -6,5 +6,265 @@
         "password": "Incredible",
         "name": "Kattie"
       }
-    ]
+    ],
+
+    "instructors": [
+    {
+      "name": "Jim Davis",
+      "category": "Academic Tutoring",
+      "availability": [
+        {
+          "date": "2024-08-05",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-08",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-10",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-12",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "1"
+    },
+    {
+      "name": "Alice Wonder",
+      "category": "Language Learning",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "2"
+    },
+    {
+      "name": "John Wick",
+      "category": "Skill Development",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "3"
+    },
+    {
+      "name": "Gina Goolas",
+      "category": "Academic Tutoring",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "4"
+    },
+    {
+      "name": "Jim Bob",
+      "category": "Language Learning",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "5"
+    },
+    {
+      "name": "Jane Smith",
+      "category": "Skill Development",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "6"
+    },
+    {
+      "name": "Johnny Learn",
+      "category": "Academic Tutoring",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "7"
+    },
+    {
+      "name": "David Hayter",
+      "category": "Academic Tutoring",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ],
+      "id": "8"
+    }
+  ]
   }
+
