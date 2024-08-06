@@ -102,7 +102,6 @@ const LoginForm = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
     alignItems: 'center',
     paddingHorizontal: 20,
     backgroundColor: '#16253D',

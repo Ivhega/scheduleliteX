@@ -23,7 +23,8 @@ export default function Instructors() {
 
   const handleSave = async () => {
     if (selectedDate && startHour) {
-      const formattedStartHour = moment(startHour).format('HH:mm');
+      //const formattedStartHour = moment(startHour).format('HH:mm');
+      const formattedStartHour = moment(startHour).format('h:mm A');
       const newAvailability = {
         date: selectedDate,
         times: [formattedStartHour],

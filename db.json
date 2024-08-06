@@ -4,7 +4,7 @@
       "id": "1",
       "email": "Hillary.Fay40@hotmail.com",
       "password": "Incredible",
-      "name": "Kattie"
+      "name": "Kattie Lou"
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "id": "3",
       "email": "ivan@sait.ca",
       "password": "Password",
-      "name": "Ivan"
+      "name": "Ivan Hernandez"
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
   "instructors": [
     {
       "id": "1",
-      "name": "Kattie",
+      "name": "Kattie Lou",
       "category": "Academic Tutoring",
       "availability": [
         {
@@ -89,7 +89,8 @@
           "times": [
             "9:00 AM",
             "12:00 PM",
-            "3:00 PM"
+            "3:00 PM",
+            "11:00 AM"
           ]
         },
         {
@@ -101,22 +102,28 @@
           ]
         },
         {
-          "date": "2024-08-09",
+          "date": "2024-08-16",
           "times": [
-            "15:14"
+            "12:00 PM"
           ]
         },
         {
-          "date": "2024-08-31",
+          "date": "2024-08-12",
           "times": [
-            "12:00"
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-30",
+          "times": [
+            "5:00 PM"
           ]
         }
       ]
     },
     {
       "id": "3",
-      "name": "Ivan",
+      "name": "Ivan Hernandez",
       "category": "Skill Development",
       "availability": [
         {
@@ -146,13 +153,13 @@
         {
           "date": "2024-08-22",
           "times": [
-            "14:00"
+            "2:00 PM"
           ]
         },
         {
           "date": "2024-08-30",
           "times": [
-            "16:00"
+            "4:00 PM"
           ]
         }
       ]
@@ -191,6 +198,138 @@
     {
       "id": "5",
       "name": "Jim Bob",
+      "category": "Language Learning",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Jim Davis",
+      "category": "Academic Tutoring",
+      "availability": [
+        {
+          "date": "2024-08-07",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-08",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-10",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-12",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "John Wick",
+      "category": "Skill Development",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Jane Smith",
+      "category": "Skill Development",
+      "availability": [
+        {
+          "date": "2024-08-23",
+          "times": [
+            "10:00 AM",
+            "11:00 AM",
+            "1:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-24",
+          "times": [
+            "9:00 AM",
+            "12:00 PM",
+            "3:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-25",
+          "times": [
+            "8:00 AM",
+            "10:00 AM",
+            "4:00 PM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Alice Wonder",
       "category": "Language Learning",
       "availability": [
         {
