@@ -11,6 +11,12 @@
         "email": "adam.devlaming@edu.sait.ca",
         "password": "password",
         "name": "Adam de Vlaming"
+      },
+      {
+        "id": 3,
+        "email": "ivan@sait.ca",
+        "password": "Password",
+        "name": "Ivan"
       }
     ],
 
