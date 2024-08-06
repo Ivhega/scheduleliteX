@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { Calendar, DateData } from 'react-native-calendars'; // Import DateData for typing
+import { Calendar, DateData } from 'react-native-calendars';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import { Picker } from '@react-native-picker/picker';
 import moment from 'moment';
@@ -13,34 +13,89 @@ interface Schedule {
 }
 
 export default function Instructors() {
-  const { user } = useAuth(); // Access user from context
+  const { user } = useAuth();
   const [schedule, setSchedule] = React.useState<Schedule>({});
   const [selectedDate, setSelectedDate] = React.useState<string>('');
   const [startHour, setStartHour] = React.useState<Date | null>(null);
-  const [endHour, setEndHour] = React.useState<Date | null>(null);
   const [classType, setClassType] = React.useState<ClassType>('Academic Tutoring');
   const [isStartHourPickerVisible, setStartHourPickerVisibility] = React.useState(false);
-  const [isEndHourPickerVisible, setEndHourPickerVisibility] = React.useState(false);
   const [isCalendarVisible, setCalendarVisible] = React.useState(false);
 
-  const handleSave = () => {
-    if (selectedDate && startHour && endHour) {
+  const handleSave = async () => {
+    if (selectedDate && startHour) {
       const formattedStartHour = moment(startHour).format('HH:mm');
-      const formattedEndHour = moment(endHour).format('HH:mm');
-      setSchedule({
-        ...schedule,
-        [selectedDate]: { classType, hours: `${formattedStartHour}-${formattedEndHour}` },
-      });
-      // Reset form fields
-      setSelectedDate('');
-      setStartHour(null);
-      setEndHour(null);
-      setClassType('Academic Tutoring');
+      const newAvailability = {
+        date: selectedDate,
+        times: [formattedStartHour],
+      };
+  
+      try {
+        const existingInstructorResponse = await fetch(`http://192.168.1.96:3000/instructors?id=${user?.id}`);
+        const existingInstructors = await existingInstructorResponse.json();
+  
+        if (existingInstructors.length > 0) {
+          const existingInstructor = existingInstructors[0];
+  
+          const availabilityIndex = existingInstructor.availability.findIndex(
+            (av: any) => av.date === selectedDate
+          );
+  
+          if (availabilityIndex !== -1) {
+            existingInstructor.availability[availabilityIndex].times.push(formattedStartHour);
+          } else {
+            existingInstructor.availability.push(newAvailability);
+          }
+  
+          const updateResponse = await fetch(`http://192.168.1.96:3000/instructors/${existingInstructor.id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(existingInstructor),
+          });
+  
+          if (updateResponse.ok) {
+            alert('Updated successfully!');
+          } else {
+            alert('Failed to update');
+          }
+        } else {
+          const response = await fetch('http://192.168.1.96:3000/instructors', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              name: user?.name || 'Unknown',
+              id: user?.id,
+              category: classType,
+              availability: [newAvailability],
+            }),
+          });
+  
+          if (response.ok) {
+            alert('Saved successfully!');
+          } else {
+            alert('Failed to save');
+          }
+        }
+  
+        setSchedule({
+          ...schedule,
+          [selectedDate]: { classType, hours: formattedStartHour },
+        });
+        setSelectedDate('');
+        setStartHour(null);
+        setClassType('Academic Tutoring');
+      } catch (error) {
+        console.error('Error saving data:', error);
+        alert('Failed to save');
+      }
     } else {
       alert('Please fill in all fields');
     }
-  };
-
+  };  
+  
   return (
     <ScrollView style={styles.container}>
       <View style={styles.form}>
@@ -57,9 +112,9 @@ export default function Instructors() {
             <View style={styles.calendarWrapper}>
               <Calendar
                 current={new Date()}
-                onDayPress={(day: DateData) => { // Specify type DateData for day
+                onDayPress={(day: DateData) => { 
                   setSelectedDate(day.dateString);
-                  setCalendarVisible(false); // Hide calendar after selection
+                  setCalendarVisible(false); 
                 }}
                 markedDates={{ [selectedDate]: { selected: true, selectedColor: '#EFB509' } }}
                 style={styles.calendar}
@@ -93,21 +148,6 @@ export default function Instructors() {
               setStartHourPickerVisibility(false);
             }}
             onCancel={() => setStartHourPickerVisibility(false)}
-          />
-          <TouchableOpacity
-            style={styles.input}
-            onPress={() => setEndHourPickerVisibility(true)}
-          >
-            <Text style={styles.inputText}>{endHour ? moment(endHour).format('HH:mm') : 'End Time'}</Text>
-          </TouchableOpacity>
-          <DateTimePickerModal
-            isVisible={isEndHourPickerVisible}
-            mode="time"
-            onConfirm={(date) => {
-              setEndHour(date);
-              setEndHourPickerVisibility(false);
-            }}
-            onCancel={() => setEndHourPickerVisibility(false)}
           />
         </View>
         <View style={styles.row}>
@@ -243,4 +283,3 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
-

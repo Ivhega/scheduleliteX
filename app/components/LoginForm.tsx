@@ -8,6 +8,7 @@ interface User {
   email: string;
   password: string;
   name: string;
+  id: string; // Add ID field here
 }
 
 const LoginForm = () => {
@@ -15,17 +16,16 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const navigation = useNavigation();
-  const { setUserName, setUserEmail } = useAuth();
+  const { setUserName, setUserEmail, setUserId } = useAuth(); // Add setUserId
 
   const handleLogin = async () => {
     if (email === '' || password === '') {
       Alert.alert('Error', 'Please fill in all fields.');
       return;
     }
-    //http://192.168.1.96
     
     try {
-      const response = await axios.get<User[]>('http://192.168.1.77:3000/users', {
+      const response = await axios.get<User[]>('http://192.168.1.96:3000/users', {
         params: { email, password }
       });
 
@@ -35,6 +35,7 @@ const LoginForm = () => {
       if (user) {
         setUserName(user.name);
         setUserEmail(user.email);
+        setUserId(user.id); // Save the user ID
         Alert.alert('Login successful', `Welcome, ${user.name}!`);
         navigation.navigate('Home');
       } else {

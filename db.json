@@ -1,28 +1,40 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "email": "Hillary.Fay40@hotmail.com",
-        "password": "Incredible",
-        "name": "Kattie"
-      },
-      {
-        "id": 2,
-        "email": "adam.devlaming@edu.sait.ca",
-        "password": "password",
-        "name": "Adam de Vlaming"
-      },
-      {
-        "id": 3,
-        "email": "ivan@sait.ca",
-        "password": "Password",
-        "name": "Ivan"
-      }
-    ],
-
-    "instructors": [
+  "users": [
     {
-      "name": "Jim Davis",
+      "id": "1",
+      "email": "Hillary.Fay40@hotmail.com",
+      "password": "Incredible",
+      "name": "Kattie"
+    },
+    {
+      "id": "2",
+      "email": "adam.devlaming@edu.sait.ca",
+      "password": "password",
+      "name": "Adam de Vlaming"
+    },
+    {
+      "id": "3",
+      "email": "ivan@sait.ca",
+      "password": "Password",
+      "name": "Ivan"
+    },
+    {
+      "id": "4",
+      "email": "ginag@gmail.com",
+      "password": "123",
+      "name": "Gina Goolas"
+    },
+    {
+      "id": "5",
+      "email": "jimbob@123.com",
+      "password": "123",
+      "name": "Jim Bob"
+    }
+  ],
+  "instructors": [
+    {
+      "id": "1",
+      "name": "Kattie",
       "category": "Academic Tutoring",
       "availability": [
         {
@@ -57,11 +69,11 @@
             "4:00 PM"
           ]
         }
-      ],
-      "id": "1"
+      ]
     },
     {
-      "name": "Alice Wonder",
+      "id": "2",
+      "name": "Adam de Vlaming",
       "category": "Language Learning",
       "availability": [
         {
@@ -88,11 +100,11 @@
             "4:00 PM"
           ]
         }
-      ],
-      "id": "2"
+      ]
     },
     {
-      "name": "John Wick",
+      "id": "3",
+      "name": "Ivan",
       "category": "Skill Development",
       "availability": [
         {
@@ -118,11 +130,23 @@
             "10:00 AM",
             "4:00 PM"
           ]
+        },
+        {
+          "date": "2024-08-22",
+          "times": [
+            "14:00"
+          ]
+        },
+        {
+          "date": "2024-08-30",
+          "times": [
+            "16:00"
+          ]
         }
-      ],
-      "id": "3"
+      ]
     },
     {
+      "id": "4",
       "name": "Gina Goolas",
       "category": "Academic Tutoring",
       "availability": [
@@ -150,10 +174,10 @@
             "4:00 PM"
           ]
         }
-      ],
-      "id": "4"
+      ]
     },
     {
+      "id": "5",
       "name": "Jim Bob",
       "category": "Language Learning",
       "availability": [
@@ -181,102 +205,7 @@
             "4:00 PM"
           ]
         }
-      ],
-      "id": "5"
-    },
-    {
-      "name": "Jane Smith",
-      "category": "Skill Development",
-      "availability": [
-        {
-          "date": "2024-08-23",
-          "times": [
-            "10:00 AM",
-            "11:00 AM",
-            "1:00 PM"
-          ]
-        },
-        {
-          "date": "2024-08-24",
-          "times": [
-            "9:00 AM",
-            "12:00 PM",
-            "3:00 PM"
-          ]
-        },
-        {
-          "date": "2024-08-25",
-          "times": [
-            "8:00 AM",
-            "10:00 AM",
-            "4:00 PM"
-          ]
-        }
-      ],
-      "id": "6"
-    },
-    {
-      "name": "Johnny Learn",
-      "category": "Academic Tutoring",
-      "availability": [
-        {
-          "date": "2024-08-23",
-          "times": [
-            "10:00 AM",
-            "11:00 AM",
-            "1:00 PM"
-          ]
-        },
-        {
-          "date": "2024-08-24",
-          "times": [
-            "9:00 AM",
-            "12:00 PM",
-            "3:00 PM"
-          ]
-        },
-        {
-          "date": "2024-08-25",
-          "times": [
-            "8:00 AM",
-            "10:00 AM",
-            "4:00 PM"
-          ]
-        }
-      ],
-      "id": "7"
-    },
-    {
-      "name": "David Hayter",
-      "category": "Academic Tutoring",
-      "availability": [
-        {
-          "date": "2024-08-23",
-          "times": [
-            "10:00 AM",
-            "11:00 AM",
-            "1:00 PM"
-          ]
-        },
-        {
-          "date": "2024-08-24",
-          "times": [
-            "9:00 AM",
-            "12:00 PM",
-            "3:00 PM"
-          ]
-        },
-        {
-          "date": "2024-08-25",
-          "times": [
-            "8:00 AM",
-            "10:00 AM",
-            "4:00 PM"
-          ]
-        }
-      ],
-      "id": "8"
+      ]
     }
   ]
-  }
-
+}
