@@ -3,12 +3,13 @@ import { View, TextInput, Button, Alert, StyleSheet, Text, Pressable, Modal, Ima
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { useAuth } from '@/app/contexts/AuthContext';
+import BASE_URL from '@/app/config/config';
 
 interface User {
   email: string;
   password: string;
   name: string;
-  id: string; // Add ID field here
+  id: string; 
 }
 
 const LoginForm = () => {
@@ -23,10 +24,8 @@ const LoginForm = () => {
       Alert.alert('Error', 'Please fill in all fields.');
       return;
     }
-    //Ivan's: 192.168.1.96
-    //Adam's: 192.168.1.77
     try {
-      const response = await axios.get<User[]>('http://192.168.1.77:3000/users', {
+      const response = await axios.get<User[]>(`${BASE_URL}/users`, {
         params: { email, password }
       });
 

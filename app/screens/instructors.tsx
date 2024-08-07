@@ -5,6 +5,7 @@ import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import { Picker } from '@react-native-picker/picker';
 import moment from 'moment';
 import { useAuth } from '@/app/contexts/AuthContext';
+import BASE_URL from '../config/config';
 
 type ClassType = 'Academic Tutoring' | 'Language Learning' | 'Skill Development';
 
@@ -29,10 +30,8 @@ export default function Instructors() {
         date: selectedDate,
         times: [formattedStartHour],
       };
-      //Ivan's: 192.168.1.96
-      //Adam's: 192.168.1.77
       try {
-        const existingInstructorResponse = await fetch(`http://192.168.1.77:3000/instructors?id=${user?.id}`);
+        const existingInstructorResponse = await fetch(`${BASE_URL}/instructors?id=${user?.id}`);
         const existingInstructors = await existingInstructorResponse.json();
   
         if (existingInstructors.length > 0) {
@@ -47,10 +46,7 @@ export default function Instructors() {
           } else {
             existingInstructor.availability.push(newAvailability);
           }
-          
-          //Ivan's: 192.168.1.96
-          //Adam's: 192.168.1.77
-          const updateResponse = await fetch(`http://192.168.1.77:3000/instructors/${existingInstructor.id}`, {
+          const updateResponse = await fetch(`${BASE_URL}/instructors/${existingInstructor.id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -64,10 +60,7 @@ export default function Instructors() {
             alert('Failed to update');
           }
         } else {
-
-          //Ivan's: 192.168.1.96
-          //Adam's: 192.168.1.77
-          const response = await fetch('http://192.168.1.77:3000/instructors', {
+          const response = await fetch(`${BASE_URL}/instructors`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

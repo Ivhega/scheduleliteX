@@ -5,6 +5,7 @@ import { Calendar } from 'react-native-calendars';
 import RNPickerSelect from 'react-native-picker-select';
 import axios from 'axios';
 import { useAuth } from '@/app/contexts/AuthContext';
+import BASE_URL from '../config/config';
 
 type Booking = {
   id: string;
@@ -43,11 +44,9 @@ const Home = () => {
       });
 */  
 
-  //Ivan's: 192.168.1.96
-  //Adam's: 192.168.1.77
   useEffect(() => {
     // Fetch instructors from local json-server
-    axios.get('http://192.168.1.77:3000/instructors')
+    axios.get(`${BASE_URL}/instructors`)
       .then(response => {
         setInstructors(response.data);
       })
