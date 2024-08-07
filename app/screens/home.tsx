@@ -32,23 +32,12 @@ const Home = () => {
   const [markedDates, setMarkedDates] = useState({});
   const [bookings, setBookings] = useState<Booking[]>([]);
   const { user } = useAuth();
-/*
-  useEffect(() => {
-    // Fetch instructors from MockAPI
-    axios.get('https://668e9654bf9912d4c92eede2.mockapi.io/tasks/instructors')
-      .then(response => {
-        setInstructors(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching instructors:', error);
-      });
-*/  
 
   //Ivan's: 192.168.1.96
   //Adam's: 192.168.1.77
   useEffect(() => {
     // Fetch instructors from local json-server
-    axios.get('http://192.168.1.77:3000/instructors')
+    axios.get(`${BASE_URL}/instructors`)
       .then(response => {
         setInstructors(response.data);
       })

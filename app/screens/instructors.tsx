@@ -45,7 +45,7 @@ export default function Instructors() {
             existingInstructor.availability[availabilityIndex].times.push(formattedStartHour);
           } else {
             existingInstructor.availability.push(newAvailability);
-          }
+          }    
           const updateResponse = await fetch(`${BASE_URL}/instructors/${existingInstructor.id}`, {
             method: 'PUT',
             headers: {
@@ -285,25 +285,3 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
-/*
-<Calendar
-                current={new Date()}
-                onDayPress={(day: DateData) => { 
-                  setSelectedDate(day.dateString);
-                  setCalendarVisible(false); 
-                }}
-                markedDates={{ [selectedDate]: { selected: true, selectedColor: '#EFB509' } }}
-                style={styles.calendar}
-                theme={{
-                  selectedDayBackgroundColor: '#EFB509',
-                  selectedDayTextColor: '#16253D',
-                  arrowColor: '#EFB509',
-                  monthTextColor: '#EFB509',
-                  textSectionTitleColor: '#EFB509',
-                  dayTextColor: '#EFB509',
-                  todayTextColor: '#EFB509',
-                  dotColor: '#EFB509',
-                }}
-              /> */
