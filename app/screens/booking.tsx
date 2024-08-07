@@ -4,8 +4,18 @@ import axios from 'axios';
 import { useAuth } from '@/app/contexts/AuthContext';
 import { useFocusEffect } from '@react-navigation/native';
 
+type Booking = {
+  id: string;
+  date: string;
+  instructorId: string;
+  time: string;
+  category: string;
+  studentName: string;
+  instructorName: string;
+};
+
 const BookingList = () => {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState<Booking[]>([]);
   const { user } = useAuth();
 
   useFocusEffect(
@@ -19,10 +29,6 @@ const BookingList = () => {
         .catch(error => {
           console.error('Error fetching bookings:', error);
         });
-
-      return () => {
-        // Clean up if needed
-      };
     }, [user])
   );
 
