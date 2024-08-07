@@ -33,10 +33,7 @@ const Home = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const { user } = useAuth();
 
-  //Ivan's: 192.168.1.96
-  //Adam's: 192.168.1.77
   useEffect(() => {
-    // Fetch instructors from local json-server
     axios.get(`${BASE_URL}/instructors`)
       .then(response => {
         setInstructors(response.data);
@@ -280,19 +277,6 @@ const styles = StyleSheet.create({
 });
 
 const pickerSelectStyles = {
-  inputIOS: {
-    fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 4,
-    color: 'black',
-    paddingRight: 30,
-    backgroundColor: 'white',
-    marginBottom: 10,
-    marginTop: 20,
-  },
   inputAndroid: {
     fontSize: 16,
     paddingVertical: 12,

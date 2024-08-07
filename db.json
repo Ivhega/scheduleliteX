@@ -29,6 +29,12 @@
       "email": "jimbob@123.com",
       "password": "123",
       "name": "Jim Bob"
+    },
+    {
+      "id": "6",
+      "email": "kamini.sehmi@sait.ca",
+      "password": "password",
+      "name": "Kamini Sehmi"
     }
   ],
   "instructors": [

@@ -24,7 +24,6 @@ export default function Instructors() {
 
   const handleSave = async () => {
     if (selectedDate && startHour) {
-      //const formattedStartHour = moment(startHour).format('HH:mm');
       const formattedStartHour = moment(startHour).format('h:mm A');
       const newAvailability = {
         date: selectedDate,
@@ -112,7 +111,7 @@ export default function Instructors() {
             <View style={styles.calendarWrapper}>
               
             <Calendar
-              current={moment().format('YYYY-MM-DD')}  // Convert the current date to the required string format
+              current={moment().format('YYYY-MM-DD')} 
               onDayPress={(day: DateData) => {
               setSelectedDate(day.dateString);
               setCalendarVisible(false);
