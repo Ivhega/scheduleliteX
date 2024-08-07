@@ -31,7 +31,7 @@
       "name": "Jim Bob"
     },
     {
-      "id": "6",
+      "id": "10",
       "email": "kamini.sehmi@sait.ca",
       "password": "password",
       "name": "Kamini Sehmi"
@@ -250,7 +250,9 @@
           "times": [
             "9:00 AM",
             "12:00 PM",
-            "3:00 PM"
+            "3:00 PM",
+            "12:00 PM",
+            "12:00 PM"
           ]
         },
         {
@@ -267,6 +269,13 @@
             "8:00 AM",
             "10:00 AM",
             "4:00 PM"
+          ]
+        },
+        {
+          "date": "2024-08-09",
+          "times": [
+            "12:05 PM",
+            "3:15 PM"
           ]
         }
       ]
@@ -362,6 +371,14 @@
             "4:00 PM"
           ]
         }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Kamini Sehmi",
+      "category": "Academic Tutoring",
+      "availability": [
+        
       ]
     }
   ]
